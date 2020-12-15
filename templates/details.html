@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    
+    <title>User Details</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+  
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="cancel-box">
+      <h2 class = "cancel_header"> <u>Forgot your flight details?</u></h2>
+      <div class = "cancel_info">
+        <p class="cancel_p"> Check your ticket details here!</p>
+        <form method = "POST" action="#">
+          <label for='user_email'>Email:</label>
+          <input class="cancel_label" type="email" name="details_email" id="user_email">
+
+          <button class='flights_button' type="submit" style="background-color: rgb(224, 129, 65);">Search</button>
+
+        </form>
+        <br>
+        <div class="flash_cancel">
+          {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+          {% endfor %}
+          
+
+          
+  
+          
+        </div>
+      </div>
+   
+    </div>
+</body>
+
+</html>

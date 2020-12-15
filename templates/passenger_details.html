@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    
+    <title>User Details</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+  
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="cancel-box">
+      <h2 class = "cancel_header"> <u>Your Details</u></h2>
+      <div class = "cancel_info">
+        <p>
+            <span class="left">Name: {{name}}</span> 
+            <span class = "right">No. of ticket(s): {{num_seats}}</span>
+          </p>
+          <p>
+            <span class="left">Order Num: {{uID}}</span> 
+            <span class = "right">No. of bag(s): {{num_bags}}</span>
+          </p> 
+        
+          <hr>
+
+          <p>
+            <span class="left">Flight ID: {{f_id}}</span> 
+          </p>
+          <p>
+            <span class="left">Departure Airport: {{dep_airport}}</span> 
+            <span class = "right">Arrival Airport: {{arr_airport}}</span>
+          </p>
+          <p>
+            <span class="left">Departure Time: {{dep_date}}</span> 
+          </p>
+          <p>
+            <span class="left">Arrival Time: {{arr_date}}</span> 
+          </p>
+          
+      </div>
+   
+    </div>
+</body>
+
+</html>

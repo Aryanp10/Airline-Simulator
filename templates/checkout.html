@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    <title>Checkout</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <!-- DETAILS is passed through -->
+    <div class = "checkout-box">
+      <h2 class = "checkout_header"> <u>Ticket Details</u> </h2>
+      <div class = "purchase_details">
+        <p>
+          <span class="left">Departure City: {{dep_city}}</span> 
+          <span class = "right">Arrival City: {{arrival_city}}</span>
+        </p>
+        <p>
+          <span class="left">Departure Time: {{dep_date}}</span> 
+          <span class = "right">Flight ID: {{f_id}}</span>
+        </p>
+        <p>
+          <span class="left">Arrival Time: {{arr_date}}</span> 
+          <!-- <span class = "right">Arrival City: New York</span> -->
+        </p>
+        
+
+        <hr>
+  
+        <p>
+          <span class="left">Name: {{name}}</span> 
+          <span class = "right">DOB: {{dob}}</span>
+        </p>
+        <p>
+          <span class="left">Number of tickets: {{num_tickets}}  </span> 
+          <span class = "right">Number of baggages: {{num_bag}}</span>
+        </p>
+        <p>
+          <span class="left">Socially Distanced Seat: {{social_yn}}</span> 
+          
+        </p>
+
+        <p>
+          <span class="left">
+            Amenities: 
+            {% for i, am in amenities %}
+              {{ am }}
+              {% if i + 1 != am_size %}
+                {{'|'}}
+              {% endif %}
+            {% endfor %}
+          </span> 
+          <!-- <span class = "right">Number of baggages: 0</span> -->
+        </p>
+
+        <hr>
+
+        <p>
+          <span class="left">Email: {{email}} </span> 
+          <span class = "right">Phone: {{phone}} </span>
+        </p>
+        <p>
+          <span class="left">Billing Name: {{name_bnk}}</span> 
+          <!-- <span class = "right">Number of baggages: 0</span> -->
+        </p>
+        <p>
+          <span class="left">Billing Address: {{addr}}</span> 
+          <!-- <span class = "right">Zipcode: 123321</span> -->
+        </p>
+        <p>
+          <span class="left">Card Number: {{cc_num}} &nbsp; &nbsp; &nbsp; CVV: {{cvv}} &nbsp; &nbsp; &nbsp; EXP: {{exp}}</span> 
+          <!-- <span class = "right">CVV: 123 &nbsp; &nbsp; EXP: 10/21</span> -->
+        </p>
+        <br>
+        <div class = "checkout_buttons">
+          <button class = "checkout_edit" onclick="history.back()">Edit</button>
+          <form action="#" method="POST">
+            <button class = "checkout_purchase">Confirm Purchase</button>
+          </form>        
+        </div>
+        
+
+      </div>
+
+    </div>
+
+    
+</body>
+
+</html>

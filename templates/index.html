@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+    <title>Fly High</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+
+
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <p class="saying">
+      WELCOME TO <span style="color: #1e486e">FLY</span> <span style="color: #eb8046">HIGH</span><br>
+      WHERE YOUR NEXT DESTINATION<br>
+      AWAITS
+      <!-- WELCOME TO <mark class = "FLY">FLY</mark><mark class = "HIGH"> HIGH</mark> WHERE YOUR NEXT DESTINATION AWAITS -->
+  </p>
+
+  <div>
+    <div class = 'search-form-box'>
+      <h2 class = "index_header">Book Flights</h2>
+      <div class = "Flights">
+        <!-- USE POST TO GET IT TO DB, AND GET TO DISPLAY IN BROWSER -->
+        <form id="flights-form" method="post" action="#">
+          <label for='from'>From:</label>
+          <input type="text" name="from" id="from" placeholder="Departure Location">
+
+          <label for='to'>To:</label>
+          <input type="text" name="to" id="to" placeholder="Arrival Location">
+
+          <label for='round_trip'>Round Trip:</label>
+          <input type="checkbox" name="round_trip" id="round_trip">
+          <br>
+          <br>
+
+          <label for='Ddate'>Departure Date:</label>
+          <input type="text" name="dep_date" id="dep_date" placeholder="MM/DD/YYYY" onfocus="(this.type='date')">
+
+          <label for='Adate'>Arrival Date:</label>
+          <input type="text" name="arrival_date" id="arrival_date" placeholder="MM/DD/YYYY" onfocus="(this.type='date')">
+
+          <br>
+          <br>
+
+          <label for='class'>Class:</label>
+          
+          <select name='flight_class_selection' class='flight_class_selection'>
+            <option value="" disabled selected>Select your option</option>
+            <option label="First Class" value="First Class" name="first_cls"></option>
+            <option label="Business" value="Business" name="business_cls"></option>
+            <option label="Economy" value="Economy" name="economy_cls"></option>
+          </select>
+
+          <br>
+          <br>
+
+          <button class='flights_button' href="{{ url_for('available_flights') }}">Search Flights</button>
+        </form>
+        <div class="flash_msg">
+          {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class = 'search-form-box'>
+      <h2 class = "index_header">Anything Else?</h2>
+      <a href="{{ url_for('cancel') }}" class="button">CANCEL FLIGHTS</a>
+      
+      <a href="{{ url_for('passengers') }}" class="button">OUR CUSTOMERS</a>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+    <title>Available Flights</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div>
+      <h2 style="text-align: center;">FLIGHTS CLOSEST FOR <span style="color: #f50707"><u>{{from_city}}</u></span> to <span style="color: #f50707"><u>{{to_city}}</u></span>
+        <!-- | Round Trip: <span style="color: #f50707"><u>12/12/1212</u></span> - <span style="color: #f50707"><u>12/12/1212</u></span> -->
+        <span>| Round Trip: {{round_yn}}</span>
+      </h2>
+    </div> 
+  
+    <div class="Cname_box">
+      <div style="text-align: center;">
+        <span class="columns">Flight Number</span>
+        <span class="columns">Departure City</span>
+        <span class="columns">Arrival City</span>
+        <span class="columns">Depart Time</span>
+        <span class="columns">Arrival Time</span>
+        <span class="columns">Flight Status</span>
+      </div>
+    </div>
+
+    <!-- <div class = "Cname_box">
+      <table class="table">
+        <tr>
+          <th scope="row_head">Flight Number</th>
+          <td class="Rfrom_head">Departure City</td>
+          <td class="Rto_head">Arrival City</td>
+          <td class="Rdep_head">Depart Date</td>
+          <td class="Rarr_head">Arrival Date</td>
+          <td class="Rstat_head">Flight Status</td>
+        </tr>
+      </table>
+    </div> -->
+
+
+
+
+  
+    <div  class="row_box">
+        <table class="table">
+          {% for i, flight in flights %}
+              <tr class="table_rows" style="border-bottom: 1px solid #000;">
+                <th scope="row">{{ flight.flight_no }}</th>
+                <td class="Rfrom">{{ dep_cities[i][0] }}</td>
+                <td class="Rto">{{ arrival_cities[i][0] }}</td>
+                <td class="Rdep">{{ flight.scheduled_departure }}</td>
+                <td class="Rarr">{{ flight.scheduled_arrival }}</td>
+                <td class="Rstat">{{ flight.status }}</td>
+                <td class="Rbutton">
+                  <form action="#" method="POST">
+                    <input type="submit" value="Select" name="{{flight.flight_id}}-submit" >
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+  <title>Confirmation</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a href="{{ url_for('index')}}">
+        <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+      </a>
+
+      <nav class="nav_menu">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Flights</a></li>
+          <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+          <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+          <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+ 
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <div class="confirmation-box">
+        <h2 class = "confirmation_header">Thank you for your order!</h2>
+        <hr>
+
+        <div class="confirmation_info">
+            <p><b>Congratulations! </b>You have booked your flight. You will shortly get a confirmation email with all your details regarding the flight.</p>
+            <p>We hope to exceed all your expectations and provide you with excellent service. Thank you again for flying with us! We hope you enjoy your flight and as always <span style="color: #1e486e">FLY</span><span style="color: #eb8046">HIGH</span>!</p>
+            <p><b>Your Unique Order Number</b>: {{user_id}} 
+                <br>
+                <b>Customer</b>: {{name}}
+                <br>
+                <b>Total</b>: ${{total}}
+                <br>
+                <br>
+                <span style="color: red;"> <b>PLEASE PRINT THIS PAGE OR SAVE THE ORDER NUMBER FOR YOUR RECIEPTS</b></span>
+                <br>
+                <span style="color: red;">Round Trip Ticket details will be emailed as it gets closer to departure date</span>
+
+            </p>
+            <br>      
+
+            <p style = "text-align: center;">The two CEO's of <span style="color: #1e486e">Fly</span><span style="color: #eb8046">High</span> hope that you have enjoyed and appreciated this simulation.</p>
+        </div>
+        
+    </div>
+  
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    <title>Precheckout</title>
+    <script>
+      function show() {
+        // document.getElementsByClassName('payment-formbox').style.display = 'block';
+        var x = document.getElementById("payment-formbox");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--  -->
+
+    <div class="pco-flight-info" style="text-align: center;">
+      Selected
+      <span style="color: #1e486e">FLY</span><span style="color: #eb8046">HIGH</span>
+      flight from <span style="color: #f50707">{{dep_city}}</span> to <span style="color: #f50707">{{arrival_city}}</span> on <span style="color: #f50707">{{dep_date}}</span> from 
+      <span style="color: #f50707">{{dep_airport}}</span>
+      <br>
+      <span style="text-align: left;">Please fill in the rest of your details below.</span>
+    </div>
+
+
+
+    <div>
+      <form id="booking-form" class="booking-form" method="POST" >
+      <div class = "booking-formbox">
+        
+          <div class = "book-form-inner">
+            <h2 class="traveller_title"><u>Traveller Details</u></h2>
+
+            <div class = "top-form">
+                <span id="pco_span">
+                  <label class="pco_label">First Name</label>
+                  <input type="text" name="fname" class="pco_input" placeholder="Enter First Name" required>
+                
+                  <label class="pco_label">Middle Initial</label>
+                  <input type="text" name="mname" class="pco_input" placeholder="M.I.">
+
+                  <label class="pco_label">Last Name</label>
+                  <input type="text" name="lname" class="pco_input" placeholder="Enter Last Name" required>
+                </span>
+            </div>
+
+            <div class="mid-form">
+              <span id="pco_span">
+                <label class="pco_label">Date of Birth</label>
+                <input type="text" name="dob" class="pco_input" placeholder="MM/DD/YYYY"  onfocus="(this.type='date')" max='2002-01-01' required>
+              </span>
+
+              <span id="pco_span">
+                <label class="pco_label">Child</label>
+                <input type="text" name="num_child" class="pco_input_small" placeholder="#" value = 0>
+
+                <label class="pco_label">Adult(s)</label>
+                <input type="text" name="num_adult" class="pco_input_small" placeholder="0" required>
+              
+                <label class="pco_label">Senior(s)</label>
+                <input type="text" name="num_senior" class="pco_input_small" placeholder="#" value = 0>
+              </span>
+            </div>
+
+            <div class="bottom-form">
+              <span id="pco_span">
+                <label class="pco_label">Number of Baggage(s)</label>
+                <select name='baggage' id='baggage' size="1" required>
+                  <option value="" disabled selected></option>
+                  <option label="0" value="0"></option>
+                  <option label="1" value="1"></option>
+                  <option label="2" value="2"></option>
+                  <option label="3" value="3" ></option>
+                  <option label="4" value="4"></option> 
+                  <option label="5" value="5"></option>                     
+                </select>
+
+                <label class="pco_label" style="margin-left:25px">Social Distanced Seat(s)</label>
+                <input type="checkbox" name="social_seats">
+              </span>
+            </div>
+
+            <div class="ammenities">
+              <span id="pco_span">
+                <h2 class="ammenitites_title"><u>Additional Amenities</u></h2>
+                <label class="pco_ammen_label">Meal</label>
+                <input type="checkbox" name="meal" class="pco_ammen_input">
+
+                <label class="pco_ammen_label">Smoking</label>
+                <input type="checkbox" name="smoking" class="pco_ammen_input">
+
+                <label class="pco_ammen_label">Movie</label>
+                <input type="checkbox" name="movie" class="pco_ammen_input">
+
+                <label class="pco_ammen_label">Wifi</label>
+                <input type="checkbox" name="WiFi" class="pco_ammen_input">
+
+                <label class="pco_ammen_label">Shower</label>
+                <input type="checkbox" name="shower" class="pco_ammen_input">
+
+                <label class="pco_ammen_label">Hot Towel</label>
+                <input type="checkbox" name="hot_towel" class="pco_ammen_input">
+              </span>
+            </div>
+          </div>
+
+          <!-- <input type="submit" class="flights_button" onclick="show()" value="Next"> -->
+          <input type="submit" class="flights_button"  value="Next" href="{{ url_for('payment') }}">
+
+      </div>
+
+      </form>
+    </div>
+  
+
+  
+</body>
+
+</html>

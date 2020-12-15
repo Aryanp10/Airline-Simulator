@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    
+    <title>Cancel</title>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+  
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="cancel-box">
+      <h2 class = "cancel_header"> <u>Want to cancel your tickets?</u> &#128546;  </h2>
+      <div class = "cancel_info">
+        <p class="cancel_p"> You can cancel your tickets here, just fill out the form below by filling out the unique order number <b style="color: red;">OR</b> email!</p>
+        <form method = "POST" action="#">
+          <label for='user_id'>Order Number:</label>
+          <input class="cancel_label" type="text" name="cancel_id" id="user_id" minlength="18" maxlength="18">
+          
+          <br>
+          <br>
+  
+          <label for='user_email'>Email:</label>
+          <input class="cancel_label" type="email" name="cancel_email" id="user_email">
+
+          <button class='flights_button' type="submit" style="background-color: rgb(224, 129, 65);">Cancel</button>
+
+        </form>
+        <br>
+        <div class="flash_cancel">
+          {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      </div>
+   
+    </div>
+</body>
+
+</html>

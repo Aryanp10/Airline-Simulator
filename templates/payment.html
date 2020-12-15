@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    <title>Payment</title>
+    <script>
+      function show() {
+        // document.getElementsByClassName('payment-formbox').style.display = 'block';
+        var x = document.getElementById("payment-formbox");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+</head>
+
+<body>
+
+  <header>
+      <div class="container">
+        <a href="{{ url_for('index')}}">
+          <img src = "{{ url_for('static', filename='images/FLY_HI2-309x88.png') }}" alt ="logo" class="logo">
+        </a>
+
+        <nav class="nav_menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Flights</a></li>
+            <li><a href="{{ url_for('details') }}">My Details</a></li>
+
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <!-- <li><a href="{{ url_for('contact') }}">Contact</a></li> -->
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--  -->
+    
+    
+
+    <!-- Bill -->
+    <div class="payment">
+      
+
+      <form class="booking-form" method = "POST">
+        <div id = "payment-formbox" class = "payment-formbox">
+          <div class = "payment-form-inner">
+            <h2 class="payment_title"><u>Billing Details</u></h2>
+          
+            <span id="pco_span">
+              <label class="pco_label">Name</label>
+              <input type="text" name="name_bnk" class="pco_input" placeholder="Name On Card" required>
+
+              <label class="pco_label" >Email</label>
+              <input type="email" name="email" class="pco_input" placeholder="user@email.com" style="width: 175px;" required>
+
+              <label class="pco_label">Phone</label>
+              <input type="text" name="phone" class="pco_input" placeholder="(123)-456-7891" style="width: 90px;" minlength ="10" maxlength ="10" required>
+            </span>
+
+            <span id="pco_span">
+              <label class="pco_label">Address Line</label>
+              <input type="text" name="address" class="pco_input" placeholder="street" style="width: 200px;" required>
+
+              <label class="pco_label">City</label>
+              <input type="text" name="city" class="pco_input"  style="width: 60px;" required>
+
+              <label class="pco_label" >State</label>
+              <select class="state" name="state"  required>
+                <option value="" disabled selected></option>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AR">AR</option>	
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>	
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>	
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>	
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>			
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>	
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+              </select>
+
+              
+              <label class="pco_label">Zip</label>
+              <input type="text" name="zip" class="pco_input"  style="width: 45px;" minlength ="5" maxlength ="5" required>
+
+            </span>
+            
+            <span id="pco_span">
+              <label class="pco_label">Card Number</label>
+              <input type="text" name="cc_num" class="pco_input" placeholder="1234 4321 6148 1234" minlength="16" maxlength="16" required>
+    
+              <label class="pco_label">CVV</label>
+              <input type="text" name="cvv" class="pco_input_small" placeholder="XXX" minlength ="3" maxlength ="3" required>
+    
+              <label class="pco_label">Expiration Date</label>
+              <input type="text" name="exp_date" class="pco_input_small" placeholder="MM/YY" minlength ="4" maxlength ="4" required>
+            </span>
+
+          </div>
+          <!-- <input type="submit" class="continue_button" value="Continue" onclick="location.href='checkout.html';"> -->
+          <input type="submit" class="continue_button" value="Continue" href="{{ url_for('checkout') }}">
+        </div>
+      </form>
+      <div class="bill">
+        <h2 class="payment_title">Order Summary</h2>
+          <table class="payment-table" >
+            <tbody>
+                <tr>
+                    <td> Ticket </td>
+                    <td style="text-align: right;"> ${{flight_amt|round(2)}} </td>
+                </tr>
+                <tr>
+                    <td> Amenities </td>
+                    <td style="text-align: right;"> ${{amenities_amt|round(2)}} </td>
+                </tr>
+                <tr>
+                  <td> Baggage Fees </td>
+                  <td style="text-align: right;"> ${{baggage_cost|round(2)}} </td>
+              </tr>
+                <tr>
+                    <td> Tax Rate </td>
+                    <td style="text-align: right;"> {{tax_rate|round(2)}}% </td>
+                </tr>
+                <tr>
+                    <td> Estimated Tax </td>
+                    <td style="text-align: right;"> ${{ total_tax|round(2) }} </td>
+                </tr>
+                    
+            </tbody>
+          </table>
+          <hr style="margin-top: 6px; width:100%; margin-bottom: 6px;">
+          <table class="payment-table" >
+            <tbody >
+              <tr>
+                <td style="font-size: 30px; padding-top: 5px;"> Total </td>
+                <td style="text-align: right;"> ${{ total_amt|round(2) }} </td>
+            </tr> 
+            </tbody>
+          </table>
+            
+        
+    </div>
+  </div>
+</body>
+
+</html>

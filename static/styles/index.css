@@ -1,0 +1,2109 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+body {
+	margin: 0;
+  /* background: rgb(231, 228, 228); */
+  background-image: url('../images/airplane_mirrored.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+header {
+  background: #d1174f;
+  /* background: #f7f7f7; */
+}
+/* d1174f */
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 5px;
+  height: 80px;
+  width: auto;
+}
+
+nav{
+  font-size: 20px;
+  float: right;
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 40px;
+  position: relative;
+}
+
+nav a {
+  color:  rgb(20, 20, 20);
+  text-decoration: none;
+  text-transform: uppercase;
+  /* font-size: 19px; */
+}
+
+nav a:hover {
+  color:rgb(255, 255, 255);
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color:rgb(255, 255, 255);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.saying{
+    font-size: 27px;
+    padding: 75px 90px;
+    color:rgb(255, 255, 255);
+    /* padding-left: 200px; */
+    float: left;
+    /* position: relative;
+    left: 50px; */
+}
+
+.search-form-box{
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(77, 77, 77, 0.9);
+  float: right;
+  margin: 25px 4px;
+  right: 65px;
+  padding: 20px;
+  width: 650px;
+}
+
+input[type=text]{
+  border-radius: 2px;
+  padding: 4px;
+  margin-left: 5px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+input[type=text]:focus {
+  border: 1px solid #555;
+}
+
+input[type=submit] {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+.flights_button{
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  background-color:  rgb(255, 246, 192);
+}
+
+.flights_button:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+
+.flight_class_selection select {
+  display: none; /*hide original SELECT element: */
+  background-color: white;
+}
+
+.flight_class_selection {
+  /* background-color: DodgerBlue; */
+  background-color: white;
+  border-radius: 2px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+.flight_class_selection:hover{
+  background-color: rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+/* Style the arrow inside the select element: */
+.flight_class_selection:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.flight_class_selection:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.flights{
+  float: right;
+}
+
+
+.flash_msg{
+  color:white;
+  font-size: 20px;
+}
+
+.index_header{
+  font-size: 28px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom:20px;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  border-style: solid;
+  background-color: rgb(255, 246, 192);
+  text-decoration: none;
+  color: initial;
+  padding: 10px;
+  margin-left:auto;
+  margin-right: 20px;
+}
+
+
+/* AVAILABLE FLGIHTS */
+
+
+.table_head{
+  padding: 20px;
+  font-weight: 150;
+  font-size: 15px;
+}
+
+.table_head th{
+  padding: 10px 35px;
+}
+
+.table_rows{
+  padding: 5px;
+  margin: auto;
+}
+
+.Cname_box{
+  border-radius: 5px;
+  background-color: rgba(30, 37, 70, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom:20px;
+  /* padding: 4px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 90%;
+}
+
+.columns{
+  padding: 40px;
+}
+
+.row_box{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  padding: 2px;
+  text-align: center;
+  width: 90%;
+}
+
+.table{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+th{
+  padding:20px 60px;
+}
+
+.Rfrom{
+  padding-left: 80px;
+}
+
+.Rto{
+  padding-left: 100px;
+}
+
+.Rdep{
+  padding-left: 100px;
+
+}
+
+.Rarr{
+  padding-left:  100px;
+}
+
+.Rstat{
+  padding-left: 100px;
+}
+
+.Rbutton{
+  padding-left: 35px;
+  padding-right: 10px;
+}
+
+
+
+/* Precheckout */
+
+
+
+.pco-flight-info{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  font-size: 18px;
+  color: white;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80%;
+}
+
+.booking-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px 20px 40px 20px;
+  width: 80%;
+}
+
+/* PAYMENT */
+
+.payment{
+  float: center;
+  max-width: 90%;
+  padding: 100px;
+}
+
+.payment-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  /* margin-left: 5%; */
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  width: 68%;
+  float: left;
+
+}
+
+.bill{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: 6%;
+  margin-bottom: 20px;
+  padding: 25px 40px;
+  width: 15%;
+  color: white;
+  float: right;
+}
+
+
+.payment-table {
+  width: 100%;
+}
+
+.payment-table td {
+  padding-bottom:10px;
+
+}
+
+
+.booking-form{
+  margin: auto;
+  /* padding: 8px; */
+}
+
+
+.pco_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  /* padding-top: 3px;
+  padding-bottom: 2px; */
+  padding: 10px 2px;
+}
+
+.pco_input{
+  float: center;
+  padding: 10px 5px;
+
+}
+
+.pco_input_small{
+  width: 45px;
+  text-align: center;
+}
+
+
+#pco_span::after{
+  content: "\a\a";
+  white-space: pre;
+}
+
+.pco_ammen_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.pco_ammen_input{
+  padding-left: 2px;
+  padding-right: 10px;
+}
+
+.traveller_title,
+.payment_title{
+  margin-top: 8px;
+}
+
+.state{
+  padding-right: 5px;
+}
+
+.state-div{
+  padding-right: 5px;
+}
+
+.continue_button{
+  float: right;
+}
+
+
+/* FAQ accordion */
+
+h1 {
+  margin-left: 24%;
+  padding-top: 20px;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 45px;
+}
+
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.accordion-item {
+  background-color: #fff;
+  color: rgb(15, 15, 15);
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 25px;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  /* font-size: 2rem; */
+  font-size: 25px;
+
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+
+/* CHECKOUT */
+
+
+.checkout-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 40%;
+}
+
+.checkout_header{
+  text-align: center;
+  padding:5px;
+  margin-top: 1px;
+  margin-bottom:35px;
+}
+
+.purchase_details{
+  margin-bottom:40px;
+}
+
+.left{
+  margin-left:8%;
+}
+
+.right{
+  float: right;
+  margin-right: 8%;
+  /* margin-left: 10%; */
+}
+
+hr{
+  width:70%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* margin: 0px; */
+  /* height: 2px; */
+  /* padding: 10px 10px; */
+}
+
+/* .checkout_buttons{
+  float: right;
+} */
+
+.checkout_buttons{
+  /* float: right; */
+  padding: 10px;
+  /* margin-bottom: 5px; */
+}
+
+/* .checkout_button_form{
+  padding: 5px;
+} */
+
+.checkout_edit{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f01616;
+  /* float: left; */
+  cursor: pointer;
+  text-align: center;
+}
+
+.checkout_purchase{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+}
+
+.continue_button{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* CONFIRMATION */
+
+
+.confirmation-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 70%;
+  height: 90%;
+}
+
+.confirmation_header{
+  font-size: 40px;
+  text-align: center;
+  padding:5px;
+  margin-top: 20px;
+  margin-bottom:5px;
+}
+
+.confirmation_info{
+
+  margin-left: 8%;
+  margin-right: 8%;
+  font-weight: 100;
+  /* padding:5px; */
+}
+
+/* CANCEL FLIGHT */
+
+.cancel-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.cancel_header{
+  text-align: center;
+  padding:10px;
+  margin-top: 25px;
+  margin-bottom:25px;
+}
+
+.cancel_label{
+  color: rgb(175, 166, 166);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  width: 300px;
+}
+
+.cancel_info{
+  margin-left: 5%;
+  margin-right:5%;
+  margin-bottom: 3%;
+}
+
+.flash_cancel{
+  margin-top:20px;
+  color:rgb(180, 102, 102);
+  font-size: 20px;
+  font-weight: 100;
+}
+
+/* Passengers */
+
+
+.column_box{
+  border-radius: 5px;
+  background-color: rgba(30, 37, 70, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom:20px;
+  padding: 10px;
+  text-align: center;
+  width: 60%;
+}
+
+.pcolumns{
+  margin-left: 22%;
+}
+
+.prow_box{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  padding: 2px;
+  width: 60%;
+}
+.pcrow{
+  padding: 10px 80px;
+}
+.prow{
+  padding: 10px 80px;
+}
+.ptable{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1400px){
+body {
+	margin: 0;
+  /* background: rgb(231, 228, 228); */
+  background-image: url('../images/airplane_mirrored.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+header {
+  background: #d1174f;
+  /* background: #f7f7f7; */
+}
+/* d1174f */
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 5px;
+  height: 80px;
+  width: auto;
+}
+
+nav{
+  font-size: 20px;
+  float: right;
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 40px;
+  position: relative;
+}
+
+nav a {
+  color:  rgb(20, 20, 20);
+  text-decoration: none;
+  text-transform: uppercase;
+  /* font-size: 19px; */
+}
+
+nav a:hover {
+  color:rgb(255, 255, 255);
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color:rgb(255, 255, 255);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.saying{
+    font-size: 27px;
+    padding: 75px 90px;
+    color:rgb(255, 255, 255);
+    /* padding-left: 200px; */
+    float: left;
+    /* position: relative;
+    left: 50px; */
+}
+
+.search-form-box{
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(77, 77, 77, 0.6);
+  float: right;
+  margin: 25px 4px;
+  right: 65px;
+  padding: 20px;
+  width: 650px;
+}
+
+input[type=text]{
+  border-radius: 2px;
+  padding: 4px;
+  margin-left: 5px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+input[type=text]:focus {
+  border: 1px solid #555;
+}
+
+input[type=submit] {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+.flights_button{
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  background-color:  rgb(255, 246, 192);
+}
+
+.flights_button:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+
+.flight_class_selection select {
+  display: none; /*hide original SELECT element: */
+  background-color: white;
+}
+
+.flight_class_selection {
+  /* background-color: DodgerBlue; */
+  background-color: white;
+  border-radius: 2px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+.flight_class_selection:hover{
+  background-color: rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+/* Style the arrow inside the select element: */
+.flight_class_selection:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.flight_class_selection:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.flights{
+  float: right;
+}
+
+
+.flash_msg{
+  color:white;
+  font-size: 20px;
+}
+
+.index_header{
+  font-size: 28px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom:20px;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  border-style: solid;
+  background-color: rgb(255, 246, 192);
+  text-decoration: none;
+  color: initial;
+  padding: 10px;
+  margin-left:auto;
+  margin-right: 20px;
+}
+
+
+/* AVAILABLE FLGIHTS */
+
+
+.table_head{
+  padding: 20px;
+  font-weight: 150;
+  font-size: 15px;
+}
+
+.table_head th{
+  padding: 10px 35px;
+}
+
+.table_rows{
+  padding: 5px;
+  margin: auto;
+}
+
+.Cname_box{
+  border-radius: 5px;
+  background-color: rgba(30, 37, 70, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom:20px;
+  /* padding: 4px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 90%;
+}
+
+.columns{
+  padding: 40px;
+}
+
+.row_box{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  padding: 2px;
+  text-align: center;
+  width: 90%;
+}
+
+.table{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+
+th{
+  padding:20px 60px;
+}
+
+.Rfrom{
+  padding-left: 80px;
+}
+
+.Rto{
+  padding-left: 100px;
+}
+
+.Rdep{
+  padding-left: 100px;
+}
+
+.Rarr{
+  padding-left:  100px;
+}
+
+.Rstat{
+  padding-left: 100px;
+}
+
+.Rbutton{
+  padding-left: 35px;
+  padding-right: 10px;
+}
+
+
+
+/* Precheckout */
+
+
+
+.pco-flight-info{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  font-size: 18px;
+  color: white;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80%;
+}
+
+.booking-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px 20px 40px 20px;
+  width: 80%;
+}
+
+/* PAYMENT */
+
+.payment{
+  float: center;
+  max-width: 90%;
+  padding: 100px;
+}
+
+.payment-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  /* margin-left: 5%; */
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  width: 68%;
+  float: left;
+   
+}
+
+.bill{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: 6%;
+  margin-bottom: 20px;
+  padding: 25px 40px;
+  width: 15%;
+  color: white;
+  float: right;
+}
+
+
+.payment-table {
+  width: 100%;
+}
+
+.payment-table td {
+  padding-bottom:10px;
+  
+}
+
+
+.booking-form{
+  margin: auto;
+  /* padding: 8px; */
+}
+
+
+.pco_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  /* padding-top: 3px;
+  padding-bottom: 2px; */
+  padding: 10px 2px;
+}
+
+.pco_input{
+  float: center;
+  padding: 10px 5px;
+  
+}
+
+.pco_input_small{
+  width: 45px;
+  text-align: center;
+}
+
+
+#pco_span::after{
+  content: "\a\a";
+  white-space: pre;
+}
+
+.pco_ammen_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.pco_ammen_input{
+  padding-left: 2px;
+  padding-right: 10px;
+}
+
+.traveller_title,
+.payment_title{
+  margin-top: 8px;
+}
+
+.state{
+  padding-right: 5px;
+}
+
+.state-div{
+  padding-right: 5px;
+}
+
+.continue_button{
+  float: right;
+}
+
+
+/* FAQ accordion */
+
+h1 {
+  margin-left: 24%;
+  padding-top: 20px;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 45px;
+}
+
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.accordion-item {
+  background-color: #fff;
+  color: rgb(15, 15, 15);
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 25px;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  /* font-size: 2rem; */
+  font-size: 25px;
+
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+
+/* CHECKOUT */
+
+
+.checkout-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 40%;
+  height: 90%;
+}
+
+.checkout_header{
+  text-align: center;
+  padding:5px;
+  margin-top: 1px;
+  margin-bottom:35px;
+}
+
+.purchase_details{
+  margin-bottom:40px;
+}
+
+.left{
+  margin-left:8%;
+}
+
+.right{
+  float: right;
+  margin-right: 8%;
+  /* margin-left: 10%; */
+}
+
+hr{
+  width:70%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* margin: 0px; */
+  /* height: 2px; */
+  /* padding: 10px 10px; */
+}
+
+/* .checkout_buttons{
+  float: right;
+} */
+
+.checkout_buttons{
+  float: right;
+}
+
+
+.checkout_edit{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f01616;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+}
+
+.checkout_purchase{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  float:right;
+}
+
+.continue_button{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1400px)
+{
+body {
+	margin: 0;
+  /* background: rgb(231, 228, 228); */
+  background-image: url('../images/airplane_mirrored.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+header {
+  background: #d1174f;
+  /* background: #f7f7f7; */
+}
+/* d1174f */
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 5px;
+  height: 80px;
+  width: auto;
+}
+
+nav{
+  font-size: 20px;
+  float: right;
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 40px;
+  position: relative;
+}
+
+nav a {
+  color:  rgb(20, 20, 20);
+  text-decoration: none;
+  text-transform: uppercase;
+  /* font-size: 19px; */
+}
+
+nav a:hover {
+  color:rgb(255, 255, 255);
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color:rgb(255, 255, 255);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.saying{
+    font-size: 40px;
+    padding: 250px 250px;
+    color:rgb(255, 255, 255);
+    /* padding-left: 200px; */
+    float: left;
+    /* position: relative;
+    left: 50px; */
+}
+
+/* .form-box-index{
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(77, 77, 77, 0.6);
+  float: right;
+  margin: 8px 4px;
+  right: 140px;
+  padding: 20px;
+  width: 650px;
+} */
+
+
+.search-form-box{
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(77, 77, 77, 0.6);
+  float: right;
+  margin: 25px 4px;
+  right: 140px;
+  padding: 20px;
+  width: 650px;
+}
+
+input[type=text]{
+  border-radius: 2px;
+  padding: 4px;
+  margin-left: 5px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+input[type=text]:focus {
+  border: 1px solid #555;
+}
+
+input[type=submit] {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+.flights_button{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  background-color:  rgb(255, 246, 192);
+}
+
+.flights_button:hover{
+  background-color:rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+
+.flight_class_selection select {
+  display: none; /*hide original SELECT element: */
+  background-color: white;
+}
+
+.flight_class_selection {
+  /* background-color: DodgerBlue; */
+  background-color: white;
+  border-radius: 2px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+.flight_class_selection:hover{
+  background-color: rgb(185, 185, 185);
+  transition: 0.3s;
+}
+
+/* Style the arrow inside the select element: */
+.flight_class_selection:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.flight_class_selection:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.flights{
+  float: right;
+}
+
+
+.flash_msg{
+  color:white;
+  font-size: 16px;
+}
+
+.index_header{
+  font-size: 35px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom:20px;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  border-style: solid;
+  background-color: rgb(255, 246, 192);
+  text-decoration: none;
+  color: initial;
+  padding: 10px;
+  margin-left:auto;
+  margin-right: 20px;
+}
+
+
+/* Precheckout */
+
+.pco-flight-info{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  font-size: 18px;
+  color: white;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 70%;
+}
+
+.booking-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 20px 20px 40px 20px;
+  width: 70%;
+}
+
+
+.payment{
+  float: center;
+  max-width: 90%;
+  padding: 100px;
+}
+
+.payment-formbox{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: 5%;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 40px 40px;
+  width: 60%;
+  float: left;
+   
+}
+
+.bill{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: 6%;
+  margin-bottom: 20px;
+  padding: 25px 40px;
+  width: 15%;
+  color: white;
+  float: right;
+}
+
+/* PAYMENT */
+
+
+
+.payment-table {
+  /* margin-top: 0px; */
+  width: 100%;
+}
+
+.payment-table td {
+  padding-bottom:10px;
+  
+}
+
+
+.booking-form{
+  margin: auto;
+  /* padding: 8px; */
+}
+
+
+.pco_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  /* padding-top: 3px;
+  padding-bottom: 2px; */
+  padding: 10px 5px;
+}
+
+.pco_input{
+  float: center;
+  padding: 10px 5px;
+  
+}
+
+.pco_input_small{
+  width: 45px;
+  text-align: center;
+}
+
+
+#pco_span::after{
+  content: "\a\a";
+  white-space: pre;
+}
+
+.pco_ammen_label{
+  color: rgb(216, 216, 216);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.pco_ammen_input{
+  padding-left: 2px;
+  padding-right: 10px;
+}
+
+.traveller_title,
+.payment_title{
+  margin-top: 8px;
+}
+
+.state{
+  padding-right: 5px;
+}
+
+.state-div{
+  padding-right: 5px;
+}
+
+.continue_button{
+  float: right;
+}
+
+
+
+
+/* FAQ accordion */
+
+h1 {
+  margin-left: 24%;
+  padding-top: 20px;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 45px;
+}
+
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.accordion-item {
+  background-color: #fff;
+  color: rgb(15, 15, 15);
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 25px;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  /* font-size: 2rem; */
+  font-size: 25px;
+
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+@media(max-width:767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+
+/* CHECKOUT */
+
+
+.checkout-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 40%;
+  height: 90%;
+}
+
+.checkout_header{
+  text-align: center;
+  padding:5px;
+  margin-top: 1px;
+  margin-bottom:35px;
+}
+
+.purchase_details{
+  margin-bottom:40px;
+}
+
+.left{
+  margin-left:8%;
+}
+
+.right{
+  float: right;
+  margin-right: 8%;
+  /* margin-left: 10%; */
+}
+
+hr{
+  width:70%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* margin: 0px; */
+  /* height: 2px; */
+  /* padding: 10px 10px; */
+}
+
+/* .checkout_buttons{
+  float: right;
+} */
+
+.checkout_buttons{
+  float: right;
+}
+
+
+.checkout_edit{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f01616;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+}
+.checkout_purchase{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+  float:right;
+}
+.continue_button{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0a316;
+  /* float: right; */
+  cursor: pointer;
+  text-align: center;
+}
+
+/* CONFIRMATION */
+
+
+.confirmation-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 70%;
+  height: 90%;
+}
+
+.confirmation_header{
+  font-size: 40px;
+  text-align: center;
+  padding:5px;
+  margin-top: 20px;
+  margin-bottom:5px;
+}
+
+.confirmation_info{
+  
+  margin-left: 8%;
+  margin-right: 8%;
+  font-weight: 100;
+  /* padding:5px; */
+}
+
+
+
+/* AVAILABLE FLGIHTS */
+
+
+.table_head{
+  padding: 20px;
+  font-weight: 150;
+  font-size: 15px;
+}
+
+.table_head th{
+  padding: 10px 35px;
+}
+
+.table_rows{
+  padding: 5px;
+  margin: auto;
+}
+
+.Cname_box{
+  border-radius: 5px;
+  background-color: rgba(30, 37, 70, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom:20px;
+  padding: 10px;
+  text-align: center;
+  width: 90%;
+}
+.columns{
+  padding: 50px;
+}
+
+.row_box{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  padding: 2px;
+  text-align: center;
+  width: 90%;
+}
+
+.table{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+th{
+  padding:20px 60px;
+}
+
+
+
+.Rfrom_head{
+  padding-left: 70px;
+}
+
+.Rto_head{
+  padding-left: 80px;
+}
+
+.Rdep_head{
+  padding-left: 105px;
+
+}
+
+.Rarr_head{
+  padding-left:  95px;
+
+}
+
+.Rstat_head{
+  padding-left: 98px;
+}
+
+
+
+
+
+
+.Rfrom{
+  padding-left: 80px;
+}
+
+.Rto{
+  padding-left: 120px;
+}
+
+.Rdep{
+  padding-left: 105px;
+
+}
+
+.Rarr{
+  padding-left:  110px;
+
+}
+
+.Rstat{
+  padding-left: 120px;
+}
+
+.Rbutton{
+  padding-left: 35px;
+}
+
+
+/* CANCEL FLIGHT */
+
+.cancel-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.cancel_header{
+  text-align: center;
+  padding:10px;
+  margin-top: 25px;
+  margin-bottom:25px;
+}
+
+.cancel_label{
+  color: rgb(175, 166, 166);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  width: 300px;
+}
+
+.cancel_info{
+  margin-left: 5%;
+  margin-right:5%;
+  margin-bottom: 3%;
+}
+
+.flash_cancel{
+  margin-top:20px;
+  color:rgb(180, 102, 102);
+  font-size: 20px;
+  font-weight: 100;
+}
+}
+
+/* CANCEL FLIGHT */
+
+.cancel-box{
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.95);
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.cancel_header{
+  text-align: center;
+  padding:10px;
+  margin-top: 25px;
+  margin-bottom:25px;
+}
+
+.cancel_label{
+  color: rgb(175, 166, 166);
+  font-size: 20px;
+  font-weight: 400;
+  float: center;
+  width: 300px;
+}
+
+.cancel_info{
+  margin-left: 5%;
+  margin-right:5%;
+  margin-bottom: 3%;
+}
+
+.flash_cancel{
+  margin-top:20px;
+  color:rgb(180, 102, 102);
+  font-size: 20px;
+  font-weight: 100;
+}
+
+
+/* Passengers */
+
+
+.column_box{
+  border-radius: 5px;
+  background-color: rgba(30, 37, 70, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom:20px;
+  padding: 10px;
+  text-align: center;
+  width: 40%;
+}
+
+.pcolumns{
+  margin-left: 22%;
+}
+
+.prow_box{
+  border-radius: 5px;
+  background-color: rgb(77, 77, 77, 0.9);
+  color: white;
+  float: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  padding: 2px;
+  width: 41%;
+}
+.pcrow{
+  padding: 10px 80px;
+}
+.prow{
+  padding: 10px 80px;
+}
+.ptable{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+}
